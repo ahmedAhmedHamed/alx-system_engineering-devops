@@ -8,7 +8,7 @@ import json
 import requests
 
 
-def recurse(subreddit, hot_list=[], count=0):
+def recurse(subreddit, hot_list=[]):
     """
     returns all the titles of all hot articles of a given subreddit
     or None.
