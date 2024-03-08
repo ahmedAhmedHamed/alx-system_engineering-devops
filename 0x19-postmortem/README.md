@@ -3,6 +3,7 @@
 ## Issue Summary
 
 ![img](nginx_dead.png)
+
 From 2:23 AM to 3:25 AM PT, requests to our API were timing out.
 client applications that relied on our API were also crippled.
 at its peak, the issue affected 100% of traffic to our API and they were unable to use it.
