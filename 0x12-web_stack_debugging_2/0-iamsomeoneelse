@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-runuser -l  userNameHere -c 'whoami'
+su $1 -c 'whoami'
