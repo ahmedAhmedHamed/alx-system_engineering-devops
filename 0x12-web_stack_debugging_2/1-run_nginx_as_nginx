@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-echo 'server {
+echo "server {
 	listen 8080 default_server;
 	listen [::]:8080 default_server ipv6only=on;
 
@@ -10,7 +10,7 @@ echo 'server {
 	location / {
 		try_files \$uri \$uri/ =404;
 	}
-}' > /etc/nginx/sites-enabled/default
+}" > /etc/nginx/sites-enabled/default
 sed -i 's/#user www-data;/user nginx;/' /etc/nginx/nginx.conf
 sudo chown -R nginx:nginx /etc/nginx
 pkill apache2
