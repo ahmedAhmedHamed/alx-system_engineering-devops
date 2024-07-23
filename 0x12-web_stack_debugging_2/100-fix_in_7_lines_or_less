@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# runs nginx as nginx using 7 lines
 sed -i 's/80/8080/' /etc/nginx/sites-enabled/default
 sudo chown -R nginx:nginx /etc/nginx
 pkill apache2
