@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+runuser -l  userNameHere -c 'whoami'
