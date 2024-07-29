@@ -2,9 +2,9 @@
 """
 this gets the todos from an API
 """
+import json
 import sys
 import urllib.request
-import json
 
 if __name__ == "__main__":
     """
@@ -12,8 +12,10 @@ if __name__ == "__main__":
     """
     emp_id = sys.argv[1]
     query = f"?userId={emp_id}"
-    todos = json.loads(urllib.request.urlopen(f"https://jsonplaceholder.typicode.com/todos{query}").read())
-    users = json.loads(urllib.request.urlopen(f"https://jsonplaceholder.typicode.com/users{query}").read())
+    todo_url = f"https://jsonplaceholder.typicode.com/todos{query}"
+    users_url = f"https://jsonplaceholder.typicode.com/users{query}"
+    todos = json.loads(urllib.request.urlopen(todo_url).read())
+    users = json.loads(urllib.request.urlopen(users_url).read())
     username = None
     for user in users:
         if user["id"] == int(emp_id):
@@ -23,6 +25,9 @@ if __name__ == "__main__":
     for todo in todos:
         if todo["completed"]:
             number_completed += 1
-    print(f"Employee {username} is done with tasks({len(todos) - number_completed}/{len(todos)}):")
+    output = f"Employee {username} is done\
+     with tasks({number_completed}/{len(todos)}):"
+    print(output)
     for task in todos:
-        print(f"\t {task['title']}")
+        if task["completed"]:
+            print(f"\t {task['title']}")
