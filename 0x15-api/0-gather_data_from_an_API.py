@@ -26,7 +26,7 @@ if __name__ == "__main__":
         if todo["completed"]:
             number_completed += 1
     output = f"Employee {username} is done\
-     with tasks({number_completed}/{len(todos)}):"
+ with tasks({number_completed}/{len(todos)}):"
     print(output)
     for task in todos:
         if task["completed"]:
