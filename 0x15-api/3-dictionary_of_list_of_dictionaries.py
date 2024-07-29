@@ -2,8 +2,8 @@
 """
 this gets tasks from API and converts them to CSV
 """
-import urllib.request
 import json
+import urllib.request
 
 if __name__ == "__main__":
     """
